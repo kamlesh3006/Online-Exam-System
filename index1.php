@@ -13,7 +13,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Student Login</title>
+  <title>Login</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="../vendors/iconfonts/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="../vendors/css/vendor.bundle.base.css">
@@ -25,27 +25,43 @@
   <link rel="stylesheet" href="../css/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="../images/favicon.png" />
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
 </head>
 
 <body>
-  <div class="container-scroller">
+<nav class="fixed top-0 z-50 w-full bg-violet-900">
+  <div class="px-3 py-3 lg:px-5 lg:pl-3">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center justify-start">
+        
+        <a href="#" class="flex ml-2 md:mr-24" >
+          <span class="self-center text-xl font-semibold sm:text-3xl whitespace-nowrap text-white" style="font-weight: bolder;">Online Exam System</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+  <div class="container-scroller border-b border-gray-200">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
       <div class="content-wrapper d-flex align-items-center auth">
         <div class="row w-100">
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left p-5">
               
-              <h4>Student Login</h4>
-              <h6 class="font-weight-light">Sign in to continue.</h6>
+              <h2 class="px-6 py-3 text-xl text-center" style="font-weight:bold;">Login</h2>
+              <h4 class="font-weight-light px-6 py-3 text-center">Sign in to continue.</h4>
               <form class="pt-3" action="" method="POST">
-                <div class="form-group">
-                  <input type="text" class="form-control form-control-lg" name="username" id="exampleInputEmail1" placeholder="Username">
+                <div class="form-group my-2 py-1">
+                  <input type="text" class="bg-gray-50 border-b border-gray-400 form-control form-control-lg" name="username" id="exampleInputEmail1" placeholder="Username">
                 </div>
-                <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" name="password" id="exampleInputPassword1" placeholder="Password"onkeyup ="return verifyPassword()">
+                <div class="form-group my-2 py-1">
+                  <input type="password" class=" bg-gray-50 border-b border-gray-400 form-control form-control-lg" name="password" id="exampleInputPassword1" placeholder="Password">
                 </div>
                 <span id = "err_msg" style="color:red"> </span> <br><br>  
-                <div class="mt-3">
+                <div class="mt-3 form-group">
                   <input type="submit" name="Login" value="Login" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href=""></div>
                 </div>
                 
@@ -77,32 +93,21 @@
 
 <!-- Mirrored from www.urbanui.com/melody/template/pages/samples/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Sep 2018 06:08:53 GMT -->
 </html>
-<script>
-  function verifyPassword() {
-  var pw = document.getElementById("exampleInputPassword1").value;
-  //check empty password field
-  if(pw == "") {
-     document.getElementById("err_msg").innerHTML = "**Fill the password please!";
-     return false;
-  }
- 
- //minimum password length validation
-  if(pw.length < 8) {
-     document.getElementById("err_msg").innerHTML = "**Password length must be atleast 8 characters";
-     return false;
-  }
 
-//maximum length of password validation
-  if(pw.length > 15) {
-     document.getElementById("err_msg").innerHTML = "**Password length must not exceed 15 characters";
-     return false;
-  } else {
-     document.getElementById("err_msg").innerHTML = "<span style='color: green;'>Ok!</span>";
+<style>
+  *{
+    margin:0px;
+    padding:0px;
   }
-}
-</script>
+  .container-scroller{
+    margin-top:10vh;
+  }
+  .form-group{
+    margin-left:89vh;
+  }
+</style>
 <?php
-include'C:\xampp\htdocs\exam\db.php';
+include'C:\xampp\htdocs\examm\db.php';
 if(isset($_POST['Login']))
 {
  $query="select * from login where username='".$_POST['username']." ' and password='".$_POST['password']."'";

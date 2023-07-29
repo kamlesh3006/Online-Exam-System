@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MCQ Questions</title>
+    <style>
+        .question-container {
+            margin-bottom: 10px;
+        }
+        .add-question {
+            margin-bottom: 10px;
+        }
+    </style>
+    
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <nav class="fixed top-0 z-50 w-full bg-violet-900">
+        <div class="px-3 py-3 lg:px-5 lg:pl-3">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center justify-start">
+              
+              <a href="#" class="flex ml-2 md:mr-24" >
+                <span class="self-center text-xl font-semibold sm:text-3xl whitespace-nowrap text-white" style="font-weight: bolder;">Exam</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="text-center">
+    <h2 style="margin-top: 5%; font-size: xx-large; font-weight: bold;">MCQ Questions</h2>
+    <form action="store_questions.php" method="post">
+        <div id="questionContainer">
+            <div class="question-container">
+                <label for="question1">Question 1:</label>
+                <input class="border border-b" type="text" name="question[]" id="question1" required>
+                <br><br>
+                <label for="option1">Option 1:</label>
+                <input class="border border-b" type="text" name="option1_1" id="option1" required>
+                <label for="correct1">Correct:</label>
+                <input type="radio" name="correct[]" value="1" id="correct1" required>
+                <br>
+                <label for="option2">Option 2:</label>
+                <input class="border border-b" type="text" name="option1_2" id="option2" required>
+                <label for="correct2">Correct:</label>
+                <input type="radio" name="correct[]" value="2" id="correct2" required>
+                <br>
+                <label for="option3">Option 3:</label>
+                <input class="border border-b" type="text" name="option1_3" id="option3" required>
+                <label for="correct3">Correct:</label>
+                <input type="radio" name="correct[]" value="3" id="correct3" required>
+                <br>
+                <label for="option4">Option 4:</label>
+                <input class="border border-b" type="text" name="option1_4" id="option4" required>
+                <label for="correct4">Correct:</label>
+                <input type="radio" name="correct[]" value="4" id="correct4" required>
+                <br>
+            </div>
+        </div>
+        <div class="add-question">
+            <button type="button" onclick="addQuestion()">Add Question</button>
+            <br>
+        </div>
+        <input type="submit" value="Submit Exam">
+    </form>
+</div>
+    <script>
+        var questionCount = 1;
+
+        function addQuestion() {
+            questionCount++;
+
+            var questionContainer = document.createElement("div");
+            questionContainer.classList.add("question-container");
+
+            var questionLabel = document.createElement("label");
+            questionLabel.textContent = "Question " + questionCount + ":";
+            var questionInput = document.createElement("input");
+            questionInput.type = "text";
+            questionInput.name = "question[]";
+            questionInput.required = true;
+
+            questionContainer.appendChild(questionLabel);
+            questionContainer.appendChild(questionInput);
+            questionContainer.appendChild(document.createElement("br"));
+
+            for (var i = 1; i <= 4; i++) {
+                var optionLabel = document.createElement("label");
+                optionLabel.textContent = "Option " + i + ":";
+                var optionInput = document.createElement("input");
+                optionInput.type = "text";
+                optionInput.name = "option" + questionCount + "_" + i;
+                optionInput.required = true;
+
+                var correctLabel = document.createElement("label");
+                correctLabel.textContent = "Correct:";
+                var correctInput = document.createElement("input");
+                correctInput.type = "radio";
+                correctInput.name = "correct[]";
+                correctInput.value = i;
+                correctInput.required = true;
+
+                questionContainer.appendChild(optionLabel);
+                questionContainer.appendChild(optionInput);
+                questionContainer.appendChild(correctLabel);
+                questionContainer.appendChild(correctInput);
+                questionContainer.appendChild(document.createElement("br"));
+            }
+
+            document.getElementById("questionContainer").appendChild(questionContainer);
+        }
+    </script>
+</body>
+</html>

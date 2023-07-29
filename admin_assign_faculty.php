@@ -139,14 +139,14 @@
 </aside>
 
 <div class="p-4 sm:ml-64">
-         <h1 style="margin-top: 10vh; font-size: xx-large; font-weight: bold;">Exam Management</h1>
+         <h1 style="margin-top: 10vh; font-size: xx-large; font-weight: bold;">Assign Faculty Management</h1>
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg" style="margin-top: 1vh;">
     
         <table class="w-full text-sm text-left text-gray-500">
             <thead class="text-sm text-gray-900 uppercase bg-gray-50">
                 <tr>
                     <th scope="col" class="px-6 py-5 text-left">
-                        Exam List
+                        Faculty List with Class Name
                     </th>
                     <th scope="col" class="px-6 py-5 pop" onclick="openPopup()" style="float: right">
                         <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
@@ -160,23 +160,15 @@
         <thead class="text-xs text-gray-700 uppercase bg-gray-100 ">
             <tr>
                 <th scope="col" class="px-6 py-3 text-center">
-                    Exam Name
-                </th>
+                    Roll No
+                <th scope="col" class="px-6 py-3 text-center">
+                    Faculty Name
                 <th scope="col" class="px-6 py-3 text-center">
                     Class Name
-                </th>
-                <th scope="col" class="px-6 py-3 text-center">
-                    Exam Duration
-                </th>
-                <th scope="col" class="px-6 py-3 text-center">
-                    Result Date & Time
-                </th>
-                <th scope="col" class="px-6 py-3 text-center">
-                    Status
-                </th>
                 <th scope="col" class="px-6 py-3 text-center">
                     Created On
                 </th>
+                
                 <th scope="col" class="px-6 py-3 text-center">
                     Action
                 </th>
@@ -185,29 +177,21 @@
         <tbody>
             <tr class="bg-gray-50 border-b ">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap text-center">
-                    Data Structure And Algorithm
+                    1
                 </th>
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap text-center">
+                    comp001
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap text-center">
                     SE Computer
                 </th>
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap text-center">
-                    1 Hr
-                </th>
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap text-center">
-                    Not Published
-                </th>
-                <td class="px-6 py-4 text-center">
-                    Pending
-                </td>
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap text-center">
                     06/05/2023
                 </th>
+               
                 <td class="px-6 py-4 text-center">
                     <a href="#" class="font-medium text-blue-600 ">Edit</a>
                 </td>
             </tr>
-            
-            
             
         </tbody>
     </table>
@@ -216,11 +200,14 @@
 
       <div id="popup" class="popup">
   <div class="popup-content" style="width: 50vh;">
-    <label for="input" style="font-weight: bold;">Enter Class :</label><br>
-    <input type="text" class="my-3 py-1 px-1 bg-gray-200 border-b border-gray-500" style="border-radius : 4px; width:45vh" id="input" placeholder="Enter Exam Name"><br>
-    <input type="text" class="my-3 py-1 px-1 bg-gray-200 border-b border-gray-500" style="border-radius : 4px; width:45vh" id="input" placeholder="Enter Class Name"><br>
-    <input type="text" class="my-3 py-1 px-1 bg-gray-200 border-b border-gray-500" style="border-radius : 4px; width:45vh" id="input"placeholder="Enter Duration"><br>
-    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 mr-1.5 mb-1.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" style="float:right" onclick="saveInput()">Add Class</button>
+    <label for="input" style="font-weight: bold;">Enter Faculty :</label><br>
+    <input type="text" class="my-3 py-1 px-1 bg-gray-200 border-b border-gray-500" style="border-radius : 4px; width:45vh" id="input" placeholder="Enter student name"><br>
+    <input type="text" class="my-3 py-1 px-1 bg-gray-200 border-b border-gray-500" style="border-radius : 4px; width:45vh" id="input" placeholder="Enter KBT_UG_ID"><br>
+    <input type="text" class="my-3 py-1 px-1 bg-gray-200 border-b border-gray-500" style="border-radius : 4px; width:45vh" id="input"placeholder="Enter Password"><br>
+    <input type="text" class="my-3 py-1 px-1 bg-gray-200 border-b border-gray-500" style="border-radius : 4px; width:45vh" id="input"placeholder="Enter Gender"><br>
+    <input type="text" class="my-3 py-1 px-1 bg-gray-200 border-b border-gray-500" style="border-radius : 4px; width:45vh" id="input"placeholder="Enter password"><br>
+    
+    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 mr-1.5 mb-1.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" style="float:right" onclick="saveInput()">Assign Faculty</button>
   </div>
 </div>
 
@@ -258,7 +245,7 @@
 
   function saveInput() {
     var input = document.getElementById("input").value;
-    alert(input + " added to Exam List");
+    alert(input + " assigned to class.");
     closePopup();
   }
 
@@ -296,7 +283,6 @@
     -webkit-filter: blur(5px);
   }
 </style>
-
 
 </body>
 

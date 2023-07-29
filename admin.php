@@ -76,7 +76,7 @@
                 <a href="/examm/admin_faculty_management.php" class="flex-1 ml-3 whitespace-nowrap px-8 text-white">Add Faculty</a>
                 </li>
                 <li class="py-3 hover:bg-gray-700">
-                <a href="#" class="flex-1 ml-3 whitespace-nowrap px-8 text-white">Assign Faculty</a>
+                <a href="/examm/admin_assign_faculty.php" class="flex-1 ml-3 whitespace-nowrap px-8 text-white">Assign Faculty</a>
                 </li>
                 </ul>
               </a>
@@ -94,7 +94,7 @@
                 <a href="/examm/admin_student.php" class="flex-1 ml-3 whitespace-nowrap px-8 text-white">Add Student</a>
                 </li>
                 <li class="py-3 hover:bg-gray-700">
-                <a href="#" class="flex-1 ml-3 whitespace-nowrap px-8 text-white">Assign Student</a>
+                <a href="/examm/admin_assign_student.php" class="flex-1 ml-3 whitespace-nowrap px-8 text-white">Assign Student</a>
                 </li>
                 </ul>
               </a>
